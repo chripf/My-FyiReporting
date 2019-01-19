@@ -1,0 +1,14 @@
+version: 1.0.{build}
+nuget:
+  account_feed: true
+  project_feed: true
+build_script:
+- cmd: >-
+    cd Release-Builds
+
+    build-fyi-release-dot-net-4.bat
+
+    build-nuget-packages.bat
+artifacts:
+- path: Release-Builds/build-output/*.zip
+- path: Release-Builds/build-output/*.nupkg
